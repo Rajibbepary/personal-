@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-timeline .vertical-timeline-element-content {
+  background: #1D293D;
+  border: 1px solid #1D293D;
+  box-shadow: none;
+  transition: all 0.4s ease;
+}
+
+.custom-timeline .vertical-timeline-element-content:hover {
+  border-color: #FF6900;
+}
