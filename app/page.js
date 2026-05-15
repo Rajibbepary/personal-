@@ -6,7 +6,7 @@ import Services from "@/components/Services";
 import Work from "@/components/Work";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Education from "@/components/Education";
+import Journey from "@/components/Journey";
 
 export default function Page() {
     return (
@@ -15,7 +15,7 @@ export default function Page() {
             <Navbar />
             <Header />
             <About />
-            <Education/>
+            <Journey/>
             <Services />
             <Work />
             <Contact />
