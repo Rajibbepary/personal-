@@ -15,16 +15,16 @@ const JourneyItem = ({ item, index }) => {
   return (
     <div ref={ref} className="flex items-center justify-between mb-12 relative">
       {/* Left Side */}
-      <div className="w-1/2 flex justify-end pr-10">
+      <div className="w-1/2 flex justify-end pr-10 ">
         {isLeft && (
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="bg-white dark:bg-gray-900 shadow-xl p-5 rounded-xl max-w-sm"
+            className="bg-white dark:bg-gray-900 shadow-xl p-5 rounded-xl w-full "
           >
-            <h3 className="text-xl font-bold">{item.title}</h3>
-            <p className="text-sm text-orange-500">{item.year}</p>
+            <p className="text-sm font-bold  w-2/12 text-center rounded-full bg-[#342F37] text-orange-500">{item.year}</p>
+            <h3 className="text-xl font-bold my-1">{item.title}</h3>
             <p className="text-sm font-medium">{item.sub}</p>
             <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
               {item.desc}
@@ -43,10 +43,10 @@ const JourneyItem = ({ item, index }) => {
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="bg-white dark:bg-gray-900 shadow-xl p-5 rounded-xl max-w-sm"
+            className="bg-white dark:bg-gray-900 shadow-xl p-5 rounded-xl w-full"
           >
-            <h3 className="text-xl font-bold">{item.title}</h3>
-            <p className="text-sm text-orange-500">{item.year}</p>
+             <p className="text-sm font-bold  w-2/12 text-center rounded-full bg-[#342F37] text-orange-500">{item.year}</p>
+            <h3 className="text-xl font-bold my-1">{item.title}</h3>
             <p className="text-sm font-medium">{item.sub}</p>
             <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
               {item.desc}
