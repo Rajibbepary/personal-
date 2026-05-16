@@ -60,24 +60,24 @@ export default function Navbar() {
                 <ul ref={navLinkRef} className="hidden md:flex items-center gap-6 lg:gap-8 bg-opacity-50 font-Ovo dark:bg-transparent ">
 
                     {/* <li><a className='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#contact">Contact me</a></li>  */}
-                    <a href="#" class="relative overflow-hidden h-6 group">
-            <span class="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100] ">Home</span>
-            <span class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Home</span></a>        
-                    <a href="#about" class="relative overflow-hidden h-6 group">
-            <span class="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">About</span>
-            <span class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">About</span></a>        
-                    <a href="#skills" class="relative overflow-hidden h-6 group">
-            <span class="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">Skills</span>
-            <span class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Skills</span></a>        
-                    <a href="#Services" class="relative overflow-hidden h-6 group">
-            <span class="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">Services</span>
-            <span class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Services</span></a>        
-                    <a href="#work" class="relative overflow-hidden h-6 group">
-            <span class="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">My Work</span>
-            <span class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">My Work</span></a>        
-                    <a href="#contact" class="relative overflow-hidden h-6 group">
-            <span class="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">Contact</span>
-            <span class="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Contact</span></a>        
+                    <a href="#" className="relative overflow-hidden h-6 group">
+            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100] ">Home</span>
+            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Home</span></a>        
+                    <a href="#about" className="relative overflow-hidden h-6 group">
+            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">About</span>
+            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">About</span></a>        
+                    <a href="#skills" className="relative overflow-hidden h-6 group">
+            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">Skills</span>
+            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Skills</span></a>        
+                    <a href="#Services" className="relative overflow-hidden h-6 group">
+            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">Services</span>
+            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Services</span></a>        
+                    <a href="#work" className="relative overflow-hidden h-6 group">
+            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">My Work</span>
+            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">My Work</span></a>        
+                    <a href="#contact" className="relative overflow-hidden h-6 group">
+            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">Contact</span>
+            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Contact</span></a>        
                 </ul>
 
                 <div className="flex items-center gap-4">
