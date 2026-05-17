@@ -1,5 +1,31 @@
 
-
+ 
+export const services = [
+        {
+            name: 'Web Development',
+            icon: '/assets/web-icon.png',
+            description: 'Building scalable, fast, and SEO-friendly web apps using Next.js...',
+            link: '',
+        },
+        {
+            name: 'Responsive Design',
+            icon: '/assets/mobile-icon.png',
+            description: 'Ensuring your website looks perfect on every screen size...',
+            link: '',
+        },
+        {
+            name: 'Performance Optimization',
+            icon: '',
+            description: 'Speeding up load times and improving Core Web Vitals....',
+            link: '',
+        },
+        {
+            name: 'UI/UX Implementation',
+            icon: '/assets/graphics-icon.png',
+            description: 'Translating Figma designs into pixel-perfect React components...',
+            link: '',
+        }
+    ];
 
 export const JOURNEY = [
   {
