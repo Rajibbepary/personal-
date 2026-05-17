@@ -8,6 +8,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Journey from "@/components/Journey";
 
+
 export default function Page() {
     return (
         <>

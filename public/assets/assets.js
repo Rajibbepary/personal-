@@ -3,25 +3,25 @@
 export const services = [
         {
             name: 'Web Development',
-            icon: '/assets/web-icon.png',
+            icon: '/assets/globe.png',
             description: 'Building scalable, fast, and SEO-friendly web apps using Next.js...',
             link: '',
         },
         {
             name: 'Responsive Design',
-            icon: '/assets/mobile-icon.png',
+            icon: '/assets/laptop-minimal.png',
             description: 'Ensuring your website looks perfect on every screen size...',
             link: '',
         },
         {
             name: 'Performance Optimization',
-            icon: '',
+            icon: '/assets/cpu.png',
             description: 'Speeding up load times and improving Core Web Vitals....',
             link: '',
         },
         {
             name: 'UI/UX Implementation',
-            icon: '/assets/graphics-icon.png',
+            icon: '/assets/palette.png',
             description: 'Translating Figma designs into pixel-perfect React components...',
             link: '',
         }
