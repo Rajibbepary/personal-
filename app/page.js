@@ -7,6 +7,7 @@ import Work from "@/components/Work";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Journey from "@/components/Journey";
+import Skills from "@/components/Skills";
 
 
 export default function Page() {
@@ -17,6 +18,7 @@ export default function Page() {
             <Header />
             <About />
             <Journey/>
+            <Skills/>
             <Services />
             <Work />
             <Contact />
