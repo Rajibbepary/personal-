@@ -96,10 +96,10 @@ const Skills = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Floating Icons */}
-          <div className="relative h-[500px] hidden lg:block">
+          <div className="relative h-[500px]">
 
             {/* Background Glow */}
-            <div className="absolute inset-0 bg-orange-500/10 blur-3xl rounded-full" />
+            <div className="absolute inset-0  bg-orange-500/10 blur-3xl rounded-full" />
 
             {skills.map((skill, index) => (
               <div

@@ -1,5 +1,6 @@
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const outfit = Outfit({
     subsets: ["latin"],
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body className="font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
                 {children}
+            <Toaster position="top-right" richColors />
             </body>
         </html>
     );

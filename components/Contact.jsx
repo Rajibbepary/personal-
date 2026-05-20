@@ -1,103 +1,282 @@
-'use client'
-import { useEffect, useState } from 'react'
+"use client";
 
-export default function Contact() {
-    const [result, setResult] = useState("");
-    const onSubmit = async (event) => {
-        event.preventDefault();
-        const hCaptcha = event.target.querySelector('textarea[name=h-captcha-response]').value;
-        if (!hCaptcha) {
-            event.preventDefault();
-            setResult("Please fill out captcha field");
-            return
-        }
-        setResult("Sending....");
-        const formData = new FormData(event.target);
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 
-        // ----- Enter your Web3 Forms Access key below---------
+import { toast } from "sonner";
 
-        formData.append("access_key", "--- enter your access key here-------");
+import {
+  Mail,
+  MapPin,
+  MessageSquare,
+  Send,
+} from "lucide-react";
 
-        const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        }).then((res) => res.json());
+import { FaWhatsapp } from "react-icons/fa";
 
-        if (res.success) {
-            console.log("Success", res);
-            setResult(res.message);
-            event.target.reset();
-        } else {
-            console.log("Error", res);
-            setResult(res.message);
-        }
-    };
+const contactSchema = z.object({
+  name: z
+    .string()
+    .min(2, "Name must be at least 2 characters"),
 
-    function CaptchaLoader() {
-        const captchadiv = document.querySelectorAll('[data-captcha="true"]');
-        if (captchadiv.length) {
-            let lang = null;
-            let onload = null;
-            let render = null;
+  phone: z
+    .string()
+    .regex(
+      /^(?:\+8801|01)[3-9]\d{8}$/,
+      "Invalid phone number"
+    ),
 
-            captchadiv.forEach(function (item) {
-                const sitekey = item.dataset.sitekey;
-                lang = item.dataset.lang;
-                onload = item.dataset.onload;
-                render = item.dataset.render;
+  email: z
+    .string()
+    .email("Invalid email address"),
 
-                if (!sitekey) {
-                    item.dataset.sitekey = "50b2fe65-b00b-4b9e-ad62-3ba471098be2";
-                }
-            });
+  message: z
+    .string()
+    .min(
+      30,
+      "Message must be at least 30 characters"
+    ),
+});
 
-            let scriptSrc = "https://js.hcaptcha.com/1/api.js?recaptchacompat=off";
-            if (lang) {
-                scriptSrc += `&hl=${lang}`;
-            }
-            if (onload) {
-                scriptSrc += `&onload=${onload}`;
-            }
-            if (render) {
-                scriptSrc += `&render=${render}`;
-            }
+const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(contactSchema),
+  });
 
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            script.async = true;
-            script.defer = true;
-            script.src = scriptSrc;
-            document.body.appendChild(script);
-        }
-    }
+  const onSubmit = async (data) => {
+    console.log(data);
 
-    useEffect(() => {
-        CaptchaLoader();
-    }, []);
-    return (
-        <div id="contact" className="w-full px-[12%] py-10 scroll-mt-20 bg-[url('/assets/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center dark:bg-none">
+    toast.success(
+      "Your message has been sent successfully 🚀"
+    );
 
-            <h4 className="text-center mb-2 text-lg font-Ovo">Connect with me</h4>
-            <h2 className="text-center text-5xl font-Ovo">Get in touch</h2>
-            <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">I&apos;d love to hear from you! If you have any questions, comments or feedback, please use the form below.</p>
+    reset();
+  };
 
-            <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
+  return (
+    <section
+      id="contact"
+      className="pt-24 pb-12 px-6 relative overflow-hidden"
+    >
+      {/* Background Blur */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[120px] -z-10" />
 
-                <input type="hidden" name="subject" value="Eliana Jade - New form Submission" />
+      <div className="max-w-6xl mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <span className="text-orange-500 font-black uppercase tracking-[0.3em]">
+            Get In Touch
+          </span>
 
-                <div className="grid grid-cols-auto gap-6 mt-10 mb-8">
-                    <input type="text" placeholder="Enter your name" className="flex-1 px-3 py-2 focus:ring-1 outline-none border border-gray-300 dark:border-white/30 rounded-md bg-white dark:bg-darkHover/30" required name="name" />
-
-                    <input type="email" placeholder="Enter your email" className="flex-1 px-3 py-2 focus:ring-1 outline-none border border-gray-300 dark:border-white/30 rounded-md bg-white dark:bg-darkHover/30" required name="email" />
-                </div>
-                <textarea rows="6" placeholder="Enter your message" className="w-full px-4 py-2 focus:ring-1 outline-none border border-gray-300 dark:border-white/30 rounded-md bg-white mb-6 dark:bg-darkHover/30" required name="message"></textarea>
-                <div className="h-captcha mb-6 max-w-full" data-captcha="true"></div>
-                <button type='submit' className="py-2 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border dark:border-white/30 dark:hover:bg-darkHover">
-                Submit now
-                    <img src="/assets/right-arrow-white.png" alt="" className="w-4" />
-                </button>
-                <p className='mt-4'>{result}</p>
-            </form>
+          <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mt-4">
+            Ready to{" "}
+            <span className="text-orange-500">
+              Collaborate?
+            </span>
+          </h2>
         </div>
-    )
-}
+
+        {/* Content */}
+        <div className="grid lg:grid-cols-5 gap-5">
+          {/* Left Contact Info */}
+          <div className="lg:col-span-2 space-y-4">
+            {/* Email */}
+            <div className="group p-5 bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-orange-500/50 transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer">
+              <div className="flex items-center gap-5">
+                <div className="w-14 h-14 bg-orange-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                  <Mail
+                    className="text-orange-500"
+                    size={24}
+                  />
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">
+                    Email Me
+                  </p>
+
+                  <p className="text-slate-900 dark:text-white font-bold text-sm md:text-base break-all">
+                    rajib635356@gmail.com
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* WhatsApp */}
+            <div className="group p-5 bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-green-500/50 transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer">
+              <div className="flex items-center gap-5">
+                <div className="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                  <FaWhatsapp
+                    className="text-green-500"
+                    size={24}
+                  />
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">
+                    WhatsApp
+                  </p>
+
+                  <p className="text-slate-900 dark:text-white font-bold text-sm md:text-base">
+                    +8801759366647
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="group p-5 bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer">
+              <div className="flex items-center gap-5">
+                <div className="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                  <MapPin
+                    className="text-blue-500"
+                    size={24}
+                  />
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">
+                    Location
+                  </p>
+
+                  <p className="text-slate-900 dark:text-white font-bold text-sm md:text-base">
+                    Dhaka, Bangladesh
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="lg:col-span-3 bg-white dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800 shadow-2xl relative overflow-hidden">
+            {/* Background Icon */}
+            <div className="absolute -top-6 -right-4 p-8 opacity-5 dark:opacity-10">
+              <MessageSquare
+                className="text-slate-900 dark:text-white"
+                size={80}
+              />
+            </div>
+
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4"
+            >
+              {/* Name */}
+              <div>
+                <label
+                  htmlFor="name"
+                  className="text-gray-400 text-sm mb-2 block"
+                >
+                  Full Name
+                </label>
+
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Enter Your Name"
+                  {...register("name")}
+                  className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-2 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100 dark:text-white transition-all duration-200"
+                />
+
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.name.message}
+                  </p>
+                )}
+              </div>
+
+              {/* Phone */}
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="text-gray-400 text-sm mb-2 block"
+                >
+                  Phone Number
+                </label>
+
+                <input
+                  type="text"
+                  id="phone"
+                  placeholder="01XXXXXXXXX"
+                  {...register("phone")}
+                  className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-2 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100 dark:text-white transition-all duration-200"
+                />
+
+                {errors.phone && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.phone.message}
+                  </p>
+                )}
+              </div>
+
+              {/* Email */}
+              <div className="md:col-span-2">
+                <label
+                  htmlFor="email"
+                  className="text-gray-400 text-sm mb-2 block"
+                >
+                  Email Address
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter Your Email"
+                  {...register("email")}
+                  className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-2 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100 dark:text-white transition-all duration-200"
+                />
+
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
+
+              {/* Message */}
+              <div className="md:col-span-2">
+                <label
+                  htmlFor="message"
+                  className="text-gray-400 text-sm mb-2 block"
+                >
+                  Your Message
+                </label>
+
+                <textarea
+                  id="message"
+                  rows={2}
+                  placeholder="Tell me about your project..."
+                  {...register("message")}
+                  className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-3 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-100 dark:text-white transition-all duration-200 resize-none"
+                />
+
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.message.message}
+                  </p>
+                )}
+              </div>
+
+              {/* Button */}
+              <button
+                type="submit"
+                className="md:col-span-2 w-full bg-orange-500 hover:bg-orange-600 text-white font-black uppercase tracking-widest rounded-lg px-6 py-2 flex items-center justify-center gap-3 transition-all duration-300"
+              >
+                Send Message
+                <Send size={18} />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
