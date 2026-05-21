@@ -111,7 +111,7 @@ const Skills = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Floating Icons */}
-          <div className="relative h-[500px] hidden lg:block">
+          <div className="relative h-[250px] hidden lg:block">
 
             {/* Background Glow */}
             <div className="absolute inset-0 bg-orange-500/10 blur-3xl rounded-full" />
@@ -119,7 +119,9 @@ const Skills = () => {
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
-                className="absolute w-24 h-24 rounded-3xl border border-white/10 backdrop-blur-xl bg-white/5 dark:bg-white/5 shadow-2xl flex items-center justify-center hover:scale-110 transition-all duration-500"
+               animate={{ y: [0, 50, 0]}}
+               transition={{duration:5, repeat:Infinity}}
+                className="absolute w-20 h-20 rounded-2xl border border-white/10 backdrop-blur-xl bg-white/5 dark:bg-white/5 shadow-2xl flex items-center justify-center  hover:scale-110 transition-all duration-500"
                 style={{
                   left: skill.left,
                   top: skill.top,
@@ -128,7 +130,7 @@ const Skills = () => {
 
                 {/* Glow */}
                 <div
-                  className="absolute inset-0 rounded-3xl blur-2xl opacity-20"
+                  className="absolute inset-0 rounded-2xl blur-2xl opacity-30"
                   style={{
                     backgroundColor: skill.color,
                   }}
