@@ -13,7 +13,7 @@ import {
 
 import {
   SiTailwindcss,
-  SiNextdotjs,
+   SiNextdotjs,
 } from "react-icons/si";
 
 const skills = [
@@ -60,8 +60,8 @@ const skills = [
   {
     name: "Next.js",
     percentage: 87,
-    color: "#ffffff",
-    icon: <SiNextdotjs size={42} />,
+    color: "#000000",
+    icon:<SiNextdotjs size={42} />,
     left: "70%",
     top: "70%",
   },
@@ -95,6 +95,7 @@ const Skills = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
+     
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-5">
@@ -111,16 +112,16 @@ const Skills = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Floating Icons */}
-          <div className="relative h-[250px] hidden lg:block">
+          <div className="relative h-[350px]">
 
             {/* Background Glow */}
             <div className="absolute inset-0 bg-orange-500/10 blur-3xl rounded-full" />
 
-            {skills.map((skill, index) => (
+            {skills.slice(0, 3).map((skill, index) => (
               <motion.div
                 key={index}
-               animate={{ y: [0, 50, 0]}}
-               transition={{duration:5, repeat:Infinity}}
+                animate={{ y:[50, 100, 50]}}
+               transition={{duration:10, repeat:Infinity}}
                 className="absolute w-20 h-20 rounded-2xl border border-white/10 backdrop-blur-xl bg-white/5 dark:bg-white/5 shadow-2xl flex items-center justify-center  hover:scale-110 transition-all duration-500"
                 style={{
                   left: skill.left,
@@ -148,6 +149,41 @@ const Skills = () => {
 
               </motion.div>
             ))}
+
+            {/* second div */}
+  {skills.slice(3).map((skill, index) => (
+              <motion.div
+                key={index}
+                animate={{ x:[50, 150, 50]}}
+               transition={{duration:10, repeat:Infinity}}
+                className="absolute w-20 h-20 rounded-2xl border border-white/10 backdrop-blur-xl bg-white/5 dark:bg-white/5 shadow-2xl flex items-center justify-center  hover:scale-110 transition-all duration-500"
+                style={{
+                  left: skill.left,
+                  top: skill.top,
+                }}
+              >
+
+                {/* Glow */}
+                <div
+                  className="absolute inset-0 rounded-2xl blur-2xl opacity-30"
+                  style={{
+                    backgroundColor: skill.color,
+                  }}
+                />
+
+                {/* Icon */}
+                <div
+                  className="relative z-10"
+                  style={{
+                    color: skill.color,
+                  }}
+                >
+                  {skill.icon}
+                </div>
+
+              </motion.div>
+            ))}
+            
 
           </div>
 
