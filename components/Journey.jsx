@@ -15,7 +15,7 @@ const JourneyItem = ({ item, index }) => {
   return (
     <div ref={ref} className="flex items-center justify-between mb-12 relative">
       {/* Left Side */}
-      <div className="w-1/2 flex justify-end pr-10 ">
+      <div className="lg:w-1/2 w-full flex justify-end lg:pr-10 ">
         {isLeft && (
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -34,10 +34,10 @@ const JourneyItem = ({ item, index }) => {
       </div>
 
       {/* Center Dot */}
-      <div className="w-4 h-4 rounded-full bg-orange-500 shadow-lg z-10" />
+      <div className=" w-4 h-4 rounded-full bg-orange-500 shadow-lg z-10" />
 
       {/* Right Side */}
-      <div className="w-1/2 pl-10">
+      <div className="lg:w-1/2 w-full lg:pl-10">
         {!isLeft && (
           <motion.div
             initial={{ opacity: 0, x: 50 }}
