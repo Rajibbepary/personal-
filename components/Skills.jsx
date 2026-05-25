@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
@@ -117,11 +116,23 @@ const Skills = () => {
             {/* Background Glow */}
             <div className="absolute inset-0 bg-orange-500/10 blur-3xl rounded-full" />
 
-            {skills.map((skill, index) => (
+            {skills.map((skill, index) => {
+               const Icon = skill.icon;
+
+             return (
               <motion.div
                 key={index}
-                animate={{ y:[20, 100, 50], x:[20, 100, 50], rotate:[5]}}
-               transition={{duration:10, delay:[5], repeat:Infinity}}
+                   initial={{ x: 0, y: 0, rotate: 0 }}
+                animate={{
+                  y: [20, 100, 50],
+                  x: [20, 100, 50],
+                  rotate: [0, 5, 0],
+                }}
+                transition={{
+                  duration: 10,
+                  delay: 0.5,
+                  repeat: Infinity,
+                }}
                 className="absolute w-20 h-20 rounded-2xl border border-white/10 backdrop-blur-xl bg-white/5 dark:bg-white/5 shadow-2xl flex items-center justify-center  hover:scale-110 transition-all duration-500"
                 style={{
                   left: skill.left,
@@ -148,7 +159,8 @@ const Skills = () => {
                 </div>
 
               </motion.div>
-            ))}
+            )
+        })}
 
 
           </div>

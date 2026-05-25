@@ -1,4 +1,13 @@
+"use client";
+
+import { useEffect, useState } from "react";
 export default function Footer() {
+     const [year, setYear] = useState("");
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+  
     return (
         <div className="mt-20">
             <div className="text-center">
@@ -11,7 +20,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-3">
-                <p>© {new Date().getFullYear()} Rajib Built with 🧡 using Next.js & Tailwind</p>
+                <p>© {year} Rajib Built with 🧡 using Next.js & Tailwind</p>
                 <ul className="flex items-center gap-10 justify-center mt-4 sm:mt-0">
                     <li><a target='_blank' href="https://github.com/Rajibbepary">GitHub</a></li>
                     <li><a target='_blank' href="https://www.linkedin.com/feed/">LinkedIn</a></li>
