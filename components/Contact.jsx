@@ -159,7 +159,7 @@ const Contact = () => {
             <div className="absolute -top-6 -right-4 p-8 opacity-5 dark:opacity-10">
               <MessageSquare
                 className="text-slate-900 dark:text-white"
-                size={80}
+                size={40}
               />
             </div>
 
