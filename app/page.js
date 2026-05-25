@@ -1,23 +1,33 @@
+"use client";
 import LenisScroll from "@/components/LenisScroll";
 import Navbar from "@/components/Navbar";
-//import Header from "@/components/Header";
+import Header from "@/components/Header";
 import Services from "@/components/Services";
 import Work from "@/components/Work";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-//import Journey from "@/components/Journey";
-import Skills from "@/components/Skills";
+import Journey from "@/components/Journey";
+// import Skills from "@/components/Skills";
+import dynamic from "next/dynamic";
 
+ const Skills = dynamic(
+  () => import("@/components/Skills"),
+  {
+    ssr: false,
+  }
+);
 
 export default function Page() {
+
+   
     return (
         <>
             <LenisScroll />
-            <Navbar />
-            {/* <Header /> */}
-            {/* <Journey/> */}
+            <Navbar /> 
+             <Header /> 
+             <Journey/> 
             <Skills/>
-            <Services />
+            <Services /> 
             <Work />
             <Contact />
             <Footer />

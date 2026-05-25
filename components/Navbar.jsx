@@ -60,7 +60,7 @@ export default function Navbar() {
                 <ul ref={navLinkRef} className="hidden md:flex items-center gap-6 lg:gap-8 bg-opacity-50 font-Ovo dark:bg-transparent ">
 
                     {/* <li><a className='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#contact">Contact me</a></li>  */}
-                    <a href="#" className="relative overflow-hidden h-6 group">
+                    <a href="/" className="relative overflow-hidden h-6 group">
             <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100] ">Home</span>
             <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Home</span></a>        
                     <a href="#about" className="relative overflow-hidden h-6 group">

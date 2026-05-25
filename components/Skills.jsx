@@ -116,10 +116,8 @@ const Skills = () => {
             {/* Background Glow */}
             <div className="absolute inset-0 bg-orange-500/10 blur-3xl rounded-full" />
 
-            {skills.map((skill, index) => {
-               const Icon = skill.icon;
-
-             return (
+            {skills.map((skill, index) => 
+              
               <motion.div
                 key={index}
                    initial={{ x: 0, y: 0, rotate: 0 }}
@@ -160,7 +158,7 @@ const Skills = () => {
 
               </motion.div>
             )
-        })}
+        }
 
 
           </div>
