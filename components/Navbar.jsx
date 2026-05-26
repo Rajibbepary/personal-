@@ -52,9 +52,12 @@ export default function Navbar() {
 
             <nav ref={navRef} className="w-full border-b-[1px solid] shadow-sm fixed px-5 lg:px-8 xl:px-[2%] py-4 flex items-center justify-between z-50">
 
-                <div className='flex items-center gap-2'>
-                     <button type="button" className="px-4 py-2 active:scale-95 transition bg-[#F85100] rounded-2xl text-white text-xl font-bold">R</button>
-                     <h2 className='text-2xl font-semibold'>Rajib</h2>
+               <div className='flex items-center gap-2'>
+                <div className="w-10 h-10 bg-gradient-to-tr from-orange-500 to-orange-600 rounded-xl flex items-center justify-center text-white font-bold">
+                    R
+                </div>
+
+                <h2 className='text-2xl font-semibold'>Rajib</h2>
                 </div>
 
                 <ul ref={navLinkRef} className="hidden md:flex items-center gap-6 lg:gap-8 bg-opacity-50 font-Ovo dark:bg-transparent ">
