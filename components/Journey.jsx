@@ -61,11 +61,11 @@ const JourneyItem = ({ item, index }) => {
 export default function JourneySection() {
   return (
     <section className="py-20 px-6 md:px-20 bg-[#FFFFFF] dark:bg-[#11001F]">
-      <h2 className="text-center text-4xl font-bold mb-16">
+      <h2 id="about" className="text-center text-4xl font-bold mb-16">
         My Journey
       </h2>
 
-      <div className="relative max-w-5xl mx-auto">
+      <div className="relative  max-w-5xl mx-auto">
         {/* Vertical line */}
         <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-orange-500/40 to-transparent transform -translate-x-1/2" />
 

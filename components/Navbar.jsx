@@ -57,7 +57,7 @@ export default function Navbar() {
                     R
                 </div>
 
-                <h2 className='text-2xl font-semibold'>Rajib</h2>
+                <h2 className='text-xl font-bold'>Rajib</h2>
                 </div>
 
                 <ul ref={navLinkRef} className="hidden md:flex items-center gap-6 lg:gap-8 bg-opacity-50 font-Ovo dark:bg-transparent ">

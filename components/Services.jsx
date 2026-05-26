@@ -117,7 +117,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto">
         
         {/* Heading */}
-        <div className="text-center mb-14 px-4">
+        <div id="Services" className="text-center mb-14 px-4">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white">
             Premium <span className="text-orange-500">Solutions</span>
           </h2>

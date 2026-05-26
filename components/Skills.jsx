@@ -83,7 +83,6 @@ const Skills = () => {
 
   return (
     <section
-      id="skills"
       ref={ref}
       className="py-24 px-6 overflow-hidden"
     >
@@ -97,7 +96,7 @@ const Skills = () => {
      
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-5">
+          <h2 id="skills" className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-5">
             My <span className="text-orange-500">Technical</span> Skills
           </h2>
 
