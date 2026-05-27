@@ -1,8 +1,8 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Navbar() {
-
+    const [active, setActive] = useState("/");
     const sideMenuRef = useRef();
     const navRef = useRef();
     const navLinkRef = useRef();
@@ -61,26 +61,24 @@ export default function Navbar() {
                 </div>
 
                 <ul ref={navLinkRef} className="hidden md:flex items-center gap-6 lg:gap-8 bg-opacity-50 font-Ovo dark:bg-transparent ">
-
-                    {/* <li><a className='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#contact">Contact me</a></li>  */}
                     <a href="/" className="relative overflow-hidden h-6 group">
-            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100] ">Home</span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Home</span></a>        
+            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-orange-500 ">Home</span>
+            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-orange-500">Home</span></a>        
                     <a href="#about" className="relative overflow-hidden h-6 group">
-            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">About</span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">About</span></a>        
+            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-orange-500">About</span>
+            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-orange-500">About</span></a>        
                     <a href="#skills" className="relative overflow-hidden h-6 group">
-            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">Skills</span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Skills</span></a>        
+            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-orange-500">Skills</span>
+            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-orange-500">Skills</span></a>        
                     <a href="#Services" className="relative overflow-hidden h-6 group">
-            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">Services</span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Services</span></a>        
+            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-orange-500">Services</span>
+            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-orange-500">Services</span></a>        
                     <a href="#work" className="relative overflow-hidden h-6 group">
-            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">My Work</span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">My Work</span></a>        
+            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-orange-500">My Work</span>
+            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-orange-500">My Work</span></a>        
                     <a href="#contact" className="relative overflow-hidden h-6 group">
-            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-[#F85100]">Contact</span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-[#F85100]">Contact</span></a>        
+            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-orange-500">Contact</span>
+            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-orange-500">Contact</span></a>        
                 </ul>
 
                 <div className="flex items-center gap-4">

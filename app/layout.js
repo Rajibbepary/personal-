@@ -13,6 +13,9 @@ const ovo = Ovo({
     variable: "--font-ovo",
 });
 
+export const metadata = {
+    title:'Rajib_Dev'
+}
 
 
 export default function RootLayout({ children }) {

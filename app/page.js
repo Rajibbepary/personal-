@@ -3,12 +3,11 @@ import LenisScroll from "@/components/LenisScroll";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 import Services from "@/components/Services";
-import Work from "@/components/Work";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Journey from "@/components/Journey";
-// import Skills from "@/components/Skills";
 import dynamic from "next/dynamic";
+import Projects from "@/components/Projects";
 
  const Skills = dynamic(
   () => import("@/components/Skills"),
@@ -28,7 +27,7 @@ export default function Page() {
              <Journey/> 
             <Skills/>
             <Services /> 
-            <Work />
+            <Projects/>
             <Contact />
             <Footer />
         </>

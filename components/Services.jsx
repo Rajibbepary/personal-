@@ -113,12 +113,12 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-24 px-6">
+    <section  className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         
         {/* Heading */}
-        <div id="Services" className="text-center mb-14 px-4">
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white">
+        <div className="text-center mb-14 px-4">
+          <h2 id="Services" className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white">
             Premium <span className="text-orange-500">Solutions</span>
           </h2>
 

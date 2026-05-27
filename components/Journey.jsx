@@ -61,7 +61,7 @@ const JourneyItem = ({ item, index }) => {
 export default function JourneySection() {
   return (
     <section className="py-20 px-6 md:px-20 bg-[#FFFFFF] dark:bg-[#11001F]">
-      <h2 id="about" className="text-center text-4xl font-bold mb-16">
+      <h2 id="about" className="text-4xl font-bold text-center text-slate-900 dark:text-white mb-20 underline decoration-orange-500 decoration-4 underline-offset-2">
         My Journey
       </h2>
 
