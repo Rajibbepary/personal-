@@ -23,13 +23,14 @@ export default function Header() {
                 </h1>
                     <p className="text-[18px] max-sm:mt-3 text-[400] text-[lab(35.5623 -1.74978 -15.4316)] dark:text-[
                     lab(84.7652 -1.94535 -7.93337)] max-w-2xl font-Ovo">I transform complex concepts into seamless digital experiences — building fast, scalable, and interactive web applications with React and Next.js.</p>
-                            <button className="group mt-4 px-10 py-3 bg-[#FF6900] rounded-lg text-white cursor-pointer active:scale-95 transition duration-300 hover:bg-[#FF4400]">
-                            <p className="relative h-6 overflow-hidden">
-                                <span className="block transition-transform duration-300 group-hover:-translate-y-full font-extrabold">Hire Me</span>
-                                <span className="absolute font-extrabold w-full top-full left-1/2 -translate-x-1/2 block transition-transform duration-300 group-hover:translate-y-[-100%]">Hire Me</span>
-                            </p>
-                        </button>
-
+                           
+                     <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                    <a
+                        className="bg-orange-500 text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-orange-500/20 hover:bg-orange-600 transition-all hover:-translate-y-1 active:scale-95"
+                    >
+                        Hire Me Now
+                    </a>
+        </div>
 
                 </div>
                 <div className="max-w-max mx-auto relative">
