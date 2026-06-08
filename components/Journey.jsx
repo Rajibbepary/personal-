@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {JOURNEY} from "@/public/assets/assets"
 
-const JourneyItem = ({ item, index }) => {
+const About = ({ item, index }) => {
   const isLeft = index % 2 === 0;
 
   const { ref, inView } = useInView({
@@ -70,7 +70,7 @@ export default function JourneySection() {
         <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-orange-500/40 to-transparent transform -translate-x-1/2" />
 
         {JOURNEY.map((item, index) => (
-          <JourneyItem key={index} item={item} index={index} />
+          <About key={index} item={item} index={index} />
         ))}
       </div>
     </section>

@@ -1,8 +1,8 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
-
+import { useEffect, useRef} from 'react'
+import { Link } from "react-scroll";
 export default function Navbar() {
-    const [active, setActive] = useState("/");
+   // const [active, setActive] = useState("/");
     const sideMenuRef = useRef();
     const navRef = useRef();
     const navLinkRef = useRef();
@@ -61,24 +61,57 @@ export default function Navbar() {
                 </div>
 
                 <ul ref={navLinkRef} className="hidden md:flex items-center gap-6 lg:gap-8 bg-opacity-50 font-Ovo dark:bg-transparent ">
-                    <a href="/" className="relative overflow-hidden h-6 group">
-            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-orange-500 ">Home</span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-orange-500">Home</span></a>        
-                    <a href="#about" className="relative overflow-hidden h-6 group">
-            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-orange-500">About</span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-orange-500">About</span></a>        
-                    <a href="#skills" className="relative overflow-hidden h-6 group">
-            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-orange-500">Skills</span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-orange-500">Skills</span></a>        
-                    <a href="#Services" className="relative overflow-hidden h-6 group">
-            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-orange-500">Services</span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-orange-500">Services</span></a>        
-                    <a href="#work" className="relative overflow-hidden h-6 group">
-            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-orange-500">My Work</span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-orange-500">My Work</span></a>        
-                    <a href="#contact" className="relative overflow-hidden h-6 group">
-            <span className="block group-hover:-translate-y-full transition-transform duration-300 hover:text-orange-500">Contact</span>
-            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 hover:text-orange-500">Contact</span></a>        
+
+            <Link to="home" spy={true} smooth={true} offset={-80} duration={500}
+            activeClass="text-orange-500 after:w-full"
+            className="cursor-pointer hover:text-orange-500 relative
+                after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0
+            after:bg-orange-500
+                after:transition-all
+                after:duration-500
+            "> Home</Link>
+            <Link to="about" spy={true} smooth={true} offset={-80} duration={500}
+            activeClass="text-orange-500 after:w-full"
+            className="cursor-pointer hover:text-orange-500 relative
+                after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0
+            after:bg-orange-500
+                after:transition-all
+                after:duration-500
+            "> About</Link>
+              <Link to="skills" spy={true} smooth={true} offset={-80} duration={500}
+            activeClass="text-orange-500 after:w-full"
+            className="cursor-pointer hover:text-orange-500 relative
+                after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0
+            after:bg-orange-500
+                after:transition-all
+                after:duration-500
+            "> Skills</Link>
+
+             <Link to="Services" spy={true} smooth={true} offset={-80} duration={500}
+            activeClass="text-orange-500 after:w-full"
+            className="cursor-pointer hover:text-orange-500 relative
+                after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0
+            after:bg-orange-500
+                after:transition-all
+                after:duration-500
+            "> Services</Link>                 
+
+             <Link to="projects" spy={true} smooth={true} offset={-80} duration={500}
+            activeClass="text-orange-500 after:w-full"
+            className="cursor-pointer hover:text-orange-500 relative
+                after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0
+            after:bg-orange-500
+                after:transition-all
+                after:duration-500
+            "> Projects</Link>                 
+             <Link to="contact" spy={true} smooth={true} offset={-80} duration={500}
+            activeClass="text-orange-500 after:w-full"
+            className="cursor-pointer hover:text-orange-500 relative
+                after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0
+            after:bg-orange-500
+                after:transition-all
+                after:duration-500
+            "> Contact</Link>                 
                 </ul>
 
                 <div className="flex items-center gap-4">
