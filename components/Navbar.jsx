@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import { useEffect, useRef} from 'react'
 import { Link } from "react-scroll";
 export default function Navbar() {
@@ -47,7 +48,13 @@ export default function Navbar() {
     return (
         <>
             <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
-                <img src="/assets/header-bg-color.png" alt="" className="w-full" />
+                {/* <img src="/assets/header-bg-color.png" alt="" className="w-full" /> */}
+                <Image src="/assets/header-bg-color.png"
+                    alt="Headr"
+                    className='w-full'
+                    width={3276}
+                    height={2496}
+                    />
             </div>
 
             <nav ref={navRef} className="w-full border-b-[1px solid] shadow-sm fixed px-5 lg:px-8 xl:px-[2%] py-4 flex items-center justify-between z-50">
@@ -116,13 +123,29 @@ export default function Navbar() {
 
                 <div className="flex items-center gap-4">
                     <button onClick={toggleTheme}>
-                        <img src="/assets/moon_icon.png" alt="" className="w-5 dark:hidden" />
-                        <img src="/assets/sun_icon.png" alt="" className="w-5 hidden dark:block" />
+                          <Image src="/assets/moon_icon.png"
+                            alt="Moon"
+                            className='w-5 dark:hidden'
+                            width={58}
+                            height={58}/>
+                            <Image src="/assets/sun_icon.png"
+                            alt="Sun"
+                            className='w-5 hidden dark:block'
+                            width={58}
+                            height={58}/>
                     </button>
 
                     <button className="block md:hidden ml-3" onClick={openMenu}>
-                        <img src="/assets/menu-black.png" alt="" className="w-6 dark:hidden" />
-                        <img src="/assets/menu-white.png" alt="" className="w-6 hidden dark:block" />
+                        <Image src="/assets/menu-black.png"
+                    alt="Menu"
+                    className='dark:hidden w-6'
+                    width={24}
+                    height={24}/>
+                        <Image src="/assets/menu-white.png"
+                    alt="Menu"
+                    className='hidden w-6 dark:block'
+                    width={24}
+                    height={24}/>
                     </button>
 
                 </div>
