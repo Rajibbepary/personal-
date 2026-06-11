@@ -153,8 +153,10 @@ export default function Navbar() {
                 <ul ref={sideMenuRef} className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 font-Ovo dark:bg-darkHover dark:text-white">
 
                     <div className="absolute right-6 top-6" onClick={closeMenu}>
-                        <img src="/assets/close-black.png" alt="" className="w-5 cursor-pointer dark:hidden" />
-                        <img src="/assets/close-white.png" alt="" className="w-5 cursor-pointer hidden dark:block" />
+                        {/* <img src="/assets/close-black.png" alt="" className="w-5 cursor-pointer dark:hidden" /> */}
+                        <Image src="/assets/close-black.png" className='w-5 cursor-pointer dark:hidden' width={29} height={29}/>
+                        <Image src="/assets/close-white.png" className='w-5 cursor-pointer dark:hidden' width={29} height={29}/>
+                        {/* <img src="/assets/close-white.png" alt="" className="w-5 cursor-pointer hidden dark:block" /> */}
                     </div>
 
                      <li><a href="#top" onClick={closeMenu}>Home</a></li>

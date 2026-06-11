@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { ReactTyped } from "react-typed";
 
 export default function Header() {
@@ -34,7 +35,12 @@ export default function Header() {
 
                 </div>
                 <div className="max-w-max mx-auto relative">
-                    <img src='/assets/user_img.png' alt="" className="w-64 sm:w-80 rounded-3xl max-w-none" />
+                    {/* <img src='/assets/user_img.png' alt="" className="w-64 sm:w-80 rounded-3xl max-w-none" /> */}
+                    <Image src="/assets/user_img.png"
+                     alt="User"
+                     className='w-64 sm:w-80 rounded-3xl max-w-none'
+                        width={800}
+                        height={1076}/>
                 </div>
             </div>
         </div>
