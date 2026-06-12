@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Journey from "@/components/Journey";
 import dynamic from "next/dynamic";
 import Projects from "@/components/Projects";
+import MyProject from "@/components/MyProject";
 
  const Skills = dynamic(
   () => import("@/components/Skills"),
@@ -27,6 +28,7 @@ export default function Page() {
              <Journey/> 
             <Skills/>
             <Services /> 
+            <MyProject/>
             <Projects/>
             <Contact />
             <Footer />

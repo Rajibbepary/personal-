@@ -154,8 +154,8 @@ export default function Navbar() {
 
                     <div className="absolute right-6 top-6" onClick={closeMenu}>
                         {/* <img src="/assets/close-black.png" alt="" className="w-5 cursor-pointer dark:hidden" /> */}
-                        <Image src="/assets/close-black.png" className='w-5 cursor-pointer dark:hidden' width={29} height={29}/>
-                        <Image src="/assets/close-white.png" className='w-5 cursor-pointer dark:hidden' width={29} height={29}/>
+                        <Image alt='close-black' src="/assets/close-black.png" className='w-5 cursor-pointer dark:hidden' width={29} height={29}/>
+                        <Image alt='close-white' src="/assets/close-white.png" className='w-5 cursor-pointer dark:hidden' width={29} height={29}/>
                         {/* <img src="/assets/close-white.png" alt="" className="w-5 cursor-pointer hidden dark:block" /> */}
                     </div>
 
