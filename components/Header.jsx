@@ -34,14 +34,25 @@ export default function Header() {
         </div>
 
                 </div>
-                <div className="max-w-max mx-auto relative">
-                    {/* <img src='/assets/user_img.png' alt="" className="w-64 sm:w-80 rounded-3xl max-w-none" /> */}
-                    <Image src="/assets/user_img.png"
-                     alt="User"
-                     className='w-64 sm:w-80 rounded-3xl max-w-none'
-                        width={800}
-                        height={1076}/>
-                </div>
+                 {/* Right Image */}
+                      <div className="flex-1 relative flex justify-center items-center">
+                        <div
+                          className="blob relative w-72 h-72 md:w-[420px] md:h-[420px] bg-gradient-to-tr from-orange-500 to-orange-400 overflow-hidden shadow-[0_20px_50px_rgba(249,115,22,0.3)] border-4 border-white/20 dark:border-white/10"
+                          style={{
+                            borderRadius:
+                              "43.7699% 56.2301% 54.9205% 45.0795% / 43.7699% 47.5398% 52.4602% 50%",
+                          }}
+                        >
+                          <Image
+                            src="/assets/user_img.png"
+                            alt="Profile"
+                            fill
+                            priority
+                            className="object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110"
+                          />
+                        </div>
+                      </div>
+                
             </div>
         </div>
     )

@@ -32,6 +32,22 @@ const projects = [
     tech: ["React", "Tailwind"],
     category: "React",
   },
+  {
+    title: "Social Media Platform",
+    desc: "A modern social media UI platform with interactive components and responsive design.",
+    img: "https://i.ibb.co/9qVDyXH/photo-1526509867162-5b0c0d1b4b33-avif-silder-1.jpg",
+    link: "https://example.com/",
+    tech: ["React", "Tailwind"],
+    category: "Vanilla JS",
+  },
+  {
+    title: "Social Media Platform",
+    desc: "A modern social media UI platform with interactive components and responsive design.",
+    img: "https://i.ibb.co/6JwWyxX9/header-playstation-image.png",
+    link: "https://example.com/",
+    tech: ["React", "Tailwind"],
+    category: "Html & Css",
+  },
 ];
 
 export default function Projects() {
@@ -141,7 +157,7 @@ export default function Projects() {
                 {project.tech.map((t, i) => (
                   <span
                     key={i}
-                    className="text-[10px] px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
+                    className="text-[10px] px-2 rounded-2xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
                   >
                     {t}
                   </span>
