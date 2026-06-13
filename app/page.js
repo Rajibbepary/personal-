@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import Journey from "@/components/Journey";
 import dynamic from "next/dynamic";
 import Projects from "@/components/Projects";
-import Home from "@/components/Home";
+
 
  const Skills = dynamic(
   () => import("@/components/Skills"),
@@ -24,7 +24,6 @@ export default function Page() {
         <>
             <LenisScroll />
             <Navbar /> 
-            <Home/>
              <Header /> 
              <Journey/> 
             <Skills/>

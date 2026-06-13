@@ -6,7 +6,7 @@ export default function Header() {
 
     return (
      <div id="home" className="w-full px-[2%] py-10 scroll-mt-25">
-            <div className="flex w-full flex-col lg:flex-row items-center gap-20 my-10">
+            <div className="flex w-full flex-col lg:flex-row items-center max-sm:flex-col-reverse gap-20 my-10">
                 <div className="flex-1">
                     <h3 className="font-Ovo mt-10 text-[20px] font-bold leading-7 text-[lab(64.272_57.1788_90.3583)]">HI, I'M RAJIB</h3>
                     <h1 className="lg:text-[70px] text-[50px] font-[900] leading-[90px] text-black dark:text-white">Frontend</h1>
@@ -48,7 +48,7 @@ export default function Header() {
                             alt="Profile"
                             fill
                             priority
-                            className="object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110"
+                            className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110"
                           />
                         </div>
                       </div>
