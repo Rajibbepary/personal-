@@ -5,6 +5,50 @@ import ownner_imag from './user_img.png'
 export const asserts = {
   ownner_imag
 }
+
+
+export const projects = [
+  {
+    title: "E-Commerce App",
+    desc: "An online store built with React, featuring a dynamic product catalog, shopping cart, and seamless checkout experience.",
+    img: "https://i.ibb.co/9HwBmbfC/work-1.png",
+    link: "https://freshcart-khaki-one.vercel.app/",
+    tech: ["Next.js", "Tailwind", "TypeScript"],
+    category: "Next.Js",
+  },
+  {
+    title: "Coffee Area",
+    desc: "A modern coffee shop landing page built with Next.js, showcasing strong visual identity and responsive layout.",
+    img: "https://i.ibb.co/tMB6MWzs/work-2.png",
+    link: "https://coffee-area-seven.vercel.app/",
+    tech: ["Next.js", "Tailwind", "TypeScript"],
+    category: "Next.Js",
+  },
+  {
+    title: "Social Media Platform",
+    desc: "A modern social media UI platform with interactive components and responsive design.",
+    img: "https://i.ibb.co/zhfDG6Vk/work-3.png",
+    link: "https://example.com/",
+    tech: ["React", "Tailwind"],
+    category: "React",
+  },
+  {
+    title: "Social Media Platform",
+    desc: "A modern social media UI platform with interactive components and responsive design.",
+    img: "https://i.ibb.co/9qVDyXH/photo-1526509867162-5b0c0d1b4b33-avif-silder-1.jpg",
+    link: "https://example.com/",
+    tech: ["React", "Tailwind"],
+    category: "Vanilla JS",
+  },
+  {
+    title: "Social Media Platform",
+    desc: "A modern social media UI platform with interactive components and responsive design.",
+    img: "https://i.ibb.co/6JwWyxX9/header-playstation-image.png",
+    link: "https://example.com/",
+    tech: ["React", "Tailwind"],
+    category: "Html & Css",
+  },
+];
  
 export const services = [
         {
