@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { ReactTyped } from "react-typed";
-
+import { asserts } from "@/public/assets/assets";
 export default function Header() {
 
     return (
@@ -25,7 +25,7 @@ export default function Header() {
                     <p className="text-[18px] max-sm:mt-3 text-[400] text-[lab(35.5623 -1.74978 -15.4316)] dark:text-[
                     lab(84.7652 -1.94535 -7.93337)] max-w-2xl font-Ovo">I transform complex concepts into seamless digital experiences — building fast, scalable, and interactive web applications with React and Next.js.</p>
                            
-                     <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                     <div className="flex  mt-4 flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
                     <a
                         className="bg-orange-500 text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-orange-500/20 hover:bg-orange-600 transition-all hover:-translate-y-1 active:scale-95"
                     >
@@ -44,7 +44,7 @@ export default function Header() {
                           }}
                         >
                           <Image
-                            src="/assets/user_img.png"
+                            src={asserts.ownner_imag}
                             alt="Profile"
                             fill
                             priority

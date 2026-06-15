@@ -1,4 +1,10 @@
 
+import ownner_imag from './user_img.png'
+
+
+export const asserts = {
+  ownner_imag
+}
  
 export const services = [
         {
