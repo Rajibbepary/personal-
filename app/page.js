@@ -10,6 +10,8 @@ import dynamic from "next/dynamic";
 import Projects from "@/components/Projects";
 
 
+
+
  const Skills = dynamic(
   () => import("@/components/Skills"),
   {

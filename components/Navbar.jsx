@@ -159,7 +159,7 @@ export default function Navbar() {
                         {/* <img src="/assets/close-white.png" alt="" className="w-5 cursor-pointer hidden dark:block" /> */}
                     </div>
 
-                     <li><a href="#top" onClick={closeMenu}>Home</a></li>
+                     <li><a href="#" onClick={closeMenu}>Home</a></li>
                     <li><a href="#about" onClick={closeMenu}>About me</a></li>
                     <li><a href="#services" onClick={closeMenu}>Services</a></li>
                     <li><a href="#work" onClick={closeMenu}>My Work</a></li>
