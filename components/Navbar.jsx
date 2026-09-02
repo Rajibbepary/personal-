@@ -158,12 +158,75 @@ export default function Navbar() {
                         <Image alt='close-white' src="/assets/close-white.png" className='w-5 cursor-pointer dark:hidden' width={29} height={29}/>
                         {/* <img src="/assets/close-white.png" alt="" className="w-5 cursor-pointer hidden dark:block" /> */}
                     </div>
+                    <li>
+  <Link
+    to="home"
+    spy={true}
+    smooth={true}
+    offset={-80}
+    duration={500}
+    activeClass="text-orange-500"
+    onClick={closeMenu}
+  >
+    Home
+  </Link>
+</li>
 
-                     <li><a href="#" onClick={closeMenu}>Home</a></li>
-                    <li><a href="#about" onClick={closeMenu}>About me</a></li>
-                    <li><a href="#services" onClick={closeMenu}>Services</a></li>
-                    <li><a href="#work" onClick={closeMenu}>My Work</a></li>
-                    <li><a href="#contact" onClick={closeMenu}>Contact me</a></li> 
+<li>
+  <Link
+    to="about"
+    spy={true}
+    smooth={true}
+    offset={-80}
+    duration={500}
+    activeClass="text-orange-500"
+    onClick={closeMenu}
+  >
+    About me
+  </Link>
+</li>
+
+<li>
+  <Link
+    to="Services"
+    spy={true}
+    smooth={true}
+    offset={-80}
+    duration={500}
+    activeClass="text-orange-500"
+    onClick={closeMenu}
+  >
+    Services
+  </Link>
+</li>
+
+<li>
+  <Link
+    to="projects"
+    spy={true}
+    smooth={true}
+    offset={-80}
+    duration={500}
+    activeClass="text-orange-500"
+    onClick={closeMenu}
+  >
+    My Work
+  </Link>
+</li>
+
+<li>
+  <Link
+    to="contact"
+    spy={true}
+    smooth={true}
+    offset={-80}
+    duration={500}
+    activeClass="text-orange-500"
+    onClick={closeMenu}
+  >
+    Contact me
+  </Link>
+</li>
                      
                 </ul>
             </nav>
