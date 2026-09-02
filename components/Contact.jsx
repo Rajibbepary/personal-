@@ -58,6 +58,14 @@ const Contact = () => {
 
     reset();
   };
+  const handleWhatsApp = () => {
+  const phone = "8801759366647";
+  const message = "Hello Rajib, I am interested in your service.";
+
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
+};
 
   return (
     <section
@@ -108,7 +116,7 @@ const Contact = () => {
             </div>
 
             {/* WhatsApp */}
-            <div className="group p-5 bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-green-500/50 transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer">
+            <div onClick={handleWhatsApp} className="group p-5 bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-green-500/50 transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer">
               <div className="flex items-center gap-5">
                 <div className="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                   <FaWhatsapp
