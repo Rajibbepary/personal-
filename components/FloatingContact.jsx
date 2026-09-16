@@ -19,7 +19,7 @@ export default function FloatingContact() {
 
       {/* WhatsApp */}
       <a
-        href="https://wa.me/8801XXXXXXXXX"
+        href="https://wa.me/8801759366647"
         target="_blank"
         rel="noopener noreferrer"
         className={`flex h-16 w-16 items-center justify-center rounded-full
@@ -37,7 +37,7 @@ export default function FloatingContact() {
 
       {/* Phone */}
       <a
-        href="tel:+8801XXXXXXXXX"
+        href="tel:+8801759366647"
         className={`flex h-16 w-16 items-center justify-center rounded-full
         bg-emerald-500 text-white shadow-lg
         transition-all duration-300
@@ -56,7 +56,7 @@ export default function FloatingContact() {
 
       {/* Messenger */}
       <a
-        href="https://m.me/YOUR_PAGE_USERNAME"
+        href="https://m.me/Rajib Raj"
         target="_blank"
         rel="noopener noreferrer"
         className={`flex h-16 w-16 items-center justify-center rounded-full
@@ -79,7 +79,7 @@ export default function FloatingContact() {
       <button
         onClick={() => setOpen(!open)}
         aria-label="Contact menu"
-        className={`flex h-16 w-16 items-center justify-center
+        className={`flex h-14 w-14 items-center justify-center
         rounded-full bg-purple-400 text-white shadow-lg
         transition-all duration-300
         hover:scale-110 ${
@@ -87,9 +87,9 @@ export default function FloatingContact() {
         }`}
       >
         {open ? (
-          <FaXmark size={36} />
+          <FaXmark size={30} />
         ) : (
-          <MdChat size={34} />
+          <MdChat size={30} />
         )}
       </button>
     </div>
