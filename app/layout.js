@@ -1,6 +1,7 @@
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+import FloatingContact from "@/components/FloatingContact";
 
 const outfit = Outfit({
     subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
             <body className="font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
                 {children}
             <Toaster position="top-right" richColors />
+            <FloatingContact/>
             </body>
         </html>
     );
