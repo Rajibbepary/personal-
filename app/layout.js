@@ -22,6 +22,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html  lang="en" suppressHydrationWarning>
+              <head>
+        <script
+            dangerouslySetInnerHTML={{
+                __html: `
+                    try {
+                        const theme = localStorage.getItem("theme");
+                        if (theme === "dark") {
+                            document.documentElement.classList.add("dark");
+                        } else {
+                            document.documentElement.classList.remove("dark");
+                        }
+                    } catch (error) {}
+                `,
+            }}
+        />
+    </head>
             <body className="font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
                 {children}
             <Toaster position="top-right" richColors />

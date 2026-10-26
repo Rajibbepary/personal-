@@ -7,48 +7,83 @@ export default function Navbar() {
     const sideMenuRef = useRef();
     const navRef = useRef();
     const navLinkRef = useRef();
+    const themeRef = useRef(null);
     const openMenu = () => {
         sideMenuRef.current.style.transform = 'translateX(-16rem)';
     }
     const closeMenu = () => {
         sideMenuRef.current.style.transform = 'translateX(16rem)';
     }
+ 
     const toggleTheme = () => {
+    const root = document.documentElement;
+    const nextTheme = root.classList.contains("dark") ? "light" : "dark";
+    root.classList.toggle("dark", nextTheme === "dark");
+    themeRef.current = nextTheme;
 
-        document.documentElement.classList.toggle('dark');
+    try {
+        localStorage.setItem("theme", nextTheme);
+    } catch (error) {
+        console.warn("Unable to save the theme preference.", error);
+    }
+};
 
-        if (document.documentElement.classList.contains('dark')) {
-            localStorage.theme = 'dark';
-        } else {
-            localStorage.theme = 'light';
-        }
+useEffect(() => {
+    const root = document.documentElement;
+
+    let savedTheme;
+    try {
+        savedTheme = localStorage.getItem("theme");
+    } catch (error) {
+        console.warn("Unable to read the saved theme preference.", error);
+        savedTheme = themeRef.current;
     }
 
-    useEffect(() => {
+    themeRef.current = savedTheme === "dark" ? "dark" : "light";
+    root.classList.toggle("dark", themeRef.current === "dark");
 
-        window.addEventListener('scroll', () => {
-            if (scrollY > 50) {
-                navRef.current.classList.add( 'bg-opacity-50', 'backdrop-blur-lg', 'dark:bg-darkTheme');
-                navLinkRef.current.classList.remove( 'bg-opacity-50',  "dark:bg-transparent");
-            } else {
-                navRef.current.classList.remove( 'bg-opacity-50', 'backdrop-blur-lg', 'dark:bg-darkTheme');
-                navLinkRef.current.classList.add( 'bg-opacity-50', "dark:bg-transparent");
-            }
-        })
+    // Navbar scroll effect
+    const handleScroll = () => {
+        if (!navRef.current || !navLinkRef.current) return;
 
-        // -------- light mode and dark mode -----------
+        if (window.scrollY > 50) {
+            navRef.current.classList.add(
+                "bg-opacity-50",
+                "backdrop-blur-lg",
+                "dark:bg-darkTheme"
+            );
 
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark')
+            navLinkRef.current.classList.remove(
+                "bg-opacity-50",
+                "dark:bg-transparent"
+            );
         } else {
-            document.documentElement.classList.remove('dark')
+            navRef.current.classList.remove(
+                "bg-opacity-50",
+                "backdrop-blur-lg",
+                "dark:bg-darkTheme"
+            );
+
+            navLinkRef.current.classList.add(
+                "bg-opacity-50",
+                "dark:bg-transparent"
+            );
         }
-    }, [])
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+        window.removeEventListener("scroll", handleScroll);
+    };
+}, []);
+
+   
 
     return (
         <>
             <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
-                {/* <img src="/assets/header-bg-color.png" alt="" className="w-full" /> */}
                 <Image src="/assets/header-bg-color.png"
                     alt="Headr"
                     className='w-full'
