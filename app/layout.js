@@ -26,14 +26,16 @@ export default function RootLayout({ children }) {
         <script
             dangerouslySetInnerHTML={{
                 __html: `
+                    let savedTheme = null;
                     try {
-                        const theme = localStorage.getItem("theme");
-                        if (theme === "dark") {
-                            document.documentElement.classList.add("dark");
-                        } else {
-                            document.documentElement.classList.remove("dark");
-                        }
-                    } catch (error) {}
+                        savedTheme = localStorage.getItem("theme");
+                    } catch (error) {
+                        console.warn("Unable to read the saved theme preference.", error);
+                    }
+
+                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                    const useDarkTheme = savedTheme === "dark" || (savedTheme !== "light" && prefersDark);
+                    document.documentElement.classList.toggle("dark", useDarkTheme);
                 `,
             }}
         />

@@ -27,10 +27,48 @@ export default function Header() {
                            
                      <div className="flex  mt-4 flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
                     <a
-                        className="bg-orange-500 text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-orange-500/20 hover:bg-orange-600 transition-all hover:-translate-y-1 active:scale-95"
+                        className="bg-orange-500 text-white px-10 py-2 rounded-xl font-bold shadow-lg shadow-orange-500/20 hover:bg-orange-600 transition-all hover:-translate-y-1 active:scale-95"
                     >
                         Hire Me Now
                     </a>
+
+<a
+  href="/rajib.pdf"
+  download="rajib.pdf"
+  className="flex items-center justify-between relative overflow-hidden font-bold text-orange-500 rounded-xl active:scale-95 transition text-sm py-3 w-46 pr-7  border-2 border-orange-500 cursor-pointer"
+>
+
+  <div className="h-full flex items-center justify-center px-3">
+              <svg
+                width="23"
+                height="19"
+                viewBox="0 0 23 19"
+                fill="none"
+                className="text-orange-500"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                    <path
+                      d="m7.438 13.985 3.77 3.77 3.769-3.77m-3.774-4.712v8.482"
+                      stroke="currentColor"
+                      strokeOpacity=".8"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                <path
+                  d="M19.576 15.012a4.712 4.712 0 0 0-2.714-8.567h-1.188a7.54 7.54 0 1 0-12.949 6.87"
+                  stroke="currentColor"
+              strokeOpacity=".8"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+      </div>
+
+      Download CV
+    </a>
+      
         </div>
 
                 </div>

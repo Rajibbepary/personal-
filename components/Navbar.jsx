@@ -36,10 +36,13 @@ useEffect(() => {
         savedTheme = localStorage.getItem("theme");
     } catch (error) {
         console.warn("Unable to read the saved theme preference.", error);
-        savedTheme = themeRef.current;
     }
 
-    themeRef.current = savedTheme === "dark" ? "dark" : "light";
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    themeRef.current =
+        savedTheme === "dark" || (savedTheme !== "light" && prefersDark)
+            ? "dark"
+            : "light";
     root.classList.toggle("dark", themeRef.current === "dark");
 
     // Navbar scroll effect
